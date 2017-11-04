@@ -1,0 +1,14 @@
+{
+  "name": "goals-reminder-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "twilio": "^3.9.2"
+  }
+}
