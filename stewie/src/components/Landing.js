@@ -21,7 +21,7 @@ class Landing extends Component {
           <div className="submission">
             <input type="number" className="phone-number" type="text" placeholder="enter your number"/>
             <Link to="/report">
-              <button type="submit" className="submit">GO</button>
+              <button type="submit" className="submit"><b>GO</b></button>
             </Link>
           </div>
         </div>
