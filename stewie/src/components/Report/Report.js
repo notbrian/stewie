@@ -6,6 +6,20 @@ import character from '/Users/JevinSidhu/Desktop/goals-reminder-app/stewie/src/c
 import base from '/Users/JevinSidhu/Desktop/goals-reminder-app/stewie/src/base.js';
 
 class Report extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      goals: {}
+    };
+  }
+
+  componentWillMount(){
+    base.syncState(`4169049147`, {
+      context: this,
+      state: 'goals'
+    });
+  }
 
   render() {
     return (
@@ -20,9 +34,11 @@ class Report extends Component {
             <h2> a collection of your successes and failures </h2>
           </div>
        </div>
-
-      <Entry date="Nov 04"/>
-
+       {
+          Object
+            .keys(this.state.goals)
+            .map(key => <Entry key={key} date={key}/>)
+        }
       </div>
     );
   }

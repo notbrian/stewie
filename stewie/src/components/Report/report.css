@@ -36,14 +36,16 @@
 .report-content {
   display: inline-block;
   margin-left: 25px;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 /* Entry CSS */
 
 .entry {
+  display: flex;
   border-bottom: solid  1px #EEE;
-  padding-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 45px;
 }
 
 .date {
@@ -69,6 +71,7 @@
 .goal-container {
   display: inline-block;
   margin-left: 50px;
+  margin-top: 35px;
 }
 
 .check-icon {
@@ -81,4 +84,5 @@
   font-size: 15px;
   text-align: center;
   width: 100px;
+  margin-top: 10px;
 }

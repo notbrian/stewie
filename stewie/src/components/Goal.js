@@ -5,17 +5,14 @@ import x from '/Users/JevinSidhu/Desktop/goals-reminder-app/stewie/src/x.svg';
 
 class Goal extends Component {
 
-  createState() {
-    const checkmarkState = "x";
-    //
-    // if this.props.completionState == "checkmark" {
-    //   checkmarkState = checkmark;
-  }
-
   render() {
+      var checkmarkState = checkmark;
+      if (this.props.completionState == false) {
+        checkmarkState = x;
+      }
     return (
       <div className="goal-container">
-        <img className="check-icon" src={checkmark} />
+        <img className="check-icon" src={checkmarkState} />
         <p className="goal-desc"> {this.props.description} </p>
       </div>
     );
