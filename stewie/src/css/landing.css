@@ -30,7 +30,7 @@ body {
   color: #FFF;
   margin: 0;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   appearance: none;
   box-shadow: none;
   border-radius: none;
@@ -59,7 +59,7 @@ body {
   margin: 0;
   color: #FFF;
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   appearance: none;
   box-shadow: none;
   border-radius: none;
@@ -80,12 +80,14 @@ body {
   font-family: 'Roboto Slab';
   font-weight: 700;
   font-size: 50px;
+  margin-bottom: 7px;
 }
 
 .content p {
   font-family: 'Avenir';
   font-weight: 300;
   font-size: 18px;
+  margin-bottom: 18px;
 }
 
 .vertical-center {

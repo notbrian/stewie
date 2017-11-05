@@ -31,7 +31,7 @@ class Report extends Component {
           </div>
           <div className="report-content">
             <h1> STEWIE'S REPORT </h1>
-            <h2> a collection of your successes and failures </h2>
+            <h2> a collection of your goals </h2>
           </div>
        </div>
        {
