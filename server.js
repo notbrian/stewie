@@ -3,6 +3,11 @@ const express = require('express');
 const session = require('express-session');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const bodyParser = require('body-parser');
+const accountSid = 'ACd46513f712bc45dfc84cd49f51edef45';
+const authToken = '9de0366e2ae88807ad3e74a1a8c6ad64';
+const client = require('twilio')(accountSid, authToken);
+
+
 
 var firebase = require('firebase/app');
 require('firebase/database');
@@ -26,6 +31,13 @@ app.use(session({
   secret: 'fff'
 }));
 
+
+app.options("/*", function(req, res, next){
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.send(200);
+});
 
 app.post('/', async function(req, res) {
   let smsCount = req.session.counter || 0;
@@ -121,8 +133,8 @@ app.post('/', async function(req, res) {
     message = "I've cleared them on your checklist! Keep it up!"
     twiml.message(message)
 
-  } else {
-    let message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them with commas "to goal1, goal2, ..."';
+  } else if (userMessage.toLowerCase().includes("hello")) {
+    message = "I've cleared them on your checklist! Keep it up!"
     twiml.message(message)
   }
   req.session.counter = smsCount + 1;
@@ -131,6 +143,23 @@ app.post('/', async function(req, res) {
   });
   res.end(twiml.toString());
 });
+
+app.post('/sendStart', function(req, res) {
+  console.log("Recieved number!")
+  console.log(req.body.phoneNumber)
+  let message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them with commas "to goal1, goal2, ..."';
+  client.messages
+    .create({
+      to: req.body.phoneNumber,
+      from: '+16474960670',
+      body: message,
+    })
+    .then((message) => console.log(message.sid));
+  res.writeHead(200, {
+    'Content-Type': 'text/xml'
+  });
+  res.end();
+})
 
 http.createServer(app).listen(1337, () => {
   console.log('Express server listening on port 1337');
