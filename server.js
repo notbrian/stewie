@@ -161,6 +161,6 @@ app.post('/sendStart', function(req, res) {
   res.end();
 })
 
-http.createServer(app).listen(1337, () => {
-  console.log('Express server listening on port 1337');
+http.createServer(app).listen(3000, () => {
+  console.log('Express server listening on port 3000');
 });
