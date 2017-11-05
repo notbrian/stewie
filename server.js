@@ -134,7 +134,7 @@ app.post('/', async function(req, res) {
     twiml.message(message)
 
   } else if (userMessage.toLowerCase().includes("hello")) {
-    message = "I've cleared them on your checklist! Keep it up!"
+    message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them as "My goals are to goal1, goal2, ..."';
     twiml.message(message)
   }
   req.session.counter = smsCount + 1;
