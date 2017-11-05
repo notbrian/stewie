@@ -1,0 +1,96 @@
+body {
+  background-color: #FBA67C;
+}
+
+.icon {
+  width: 200px;
+}
+
+.info {
+  color: #FFF;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.image {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.content {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.phone-number {
+  font-family: 'Avenir' !important;
+  background-color: #FFC3A5;
+  padding: 11px;
+  color: #FFF;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 13px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #FFF;
+}
+
+.phone-number:focus {
+  outline: none;
+}
+
+.submit {
+  font-family: 'Avenir' !important;
+  width: 20%;
+  background-color: #FFC3A5;
+  border-left: solid 1px #FFF;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  padding: 11px;
+  margin: 0;
+  color: #FFF;
+  font-family: sans-serif;
+  font-size: 13px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.submit:focus {
+  outline: none;
+}
+
+.submit:hover {
+  outline: none;
+  background-color: #F9B99A;
+}
+
+.content h1 {
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+}
+
+.content p {
+  font-family: 'Avenir';
+  font-weight: 300;
+
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
