@@ -147,7 +147,7 @@ app.post('/', async function(req, res) {
 app.post('/sendStart', function(req, res) {
   console.log("Recieved number!")
   console.log(req.body.phoneNumber)
-  let message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them with commas "to goal1, goal2, ..."';
+  let message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them as "My goals are to goal1, goal2, ..."';
   client.messages
     .create({
       to: req.body.phoneNumber,
