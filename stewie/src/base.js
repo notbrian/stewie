@@ -1,5 +1,4 @@
 import Rebase from 're-base';
-import firebase from 'firebase';
 
 const base = Rebase.createClass({
   apiKey: "AIzaSyCyTpihMAroNqReFOErgq210gJdU2fYU9Y",

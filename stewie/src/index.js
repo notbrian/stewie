@@ -8,8 +8,6 @@ import App from './components/App';
 import Landing from './components/Landing';
 import NotFound from './components/NotFound';
 
-import registerServiceWorker from './registerServiceWorker';
-
 const Root = () => {
   return (
   	<BrowserRouter>
