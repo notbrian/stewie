@@ -1,0 +1,84 @@
+.report-body {
+  background-color: #FFF;
+  height: 100%;
+}
+
+.header {
+  display:flex;
+  padding-top: 50px;
+  border-bottom: solid  1px #EEE;
+  padding-bottom: 50px;
+}
+
+.header h1 {
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-size: 35px;
+  color: #000;
+}
+
+.header h2 {
+  font-family: 'Avenir';
+  font-size: 20px;
+  color: #A2A2A2;
+  margin-top: 8px;
+}
+
+.report-image {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.report-icon {
+  width: 125px;
+}
+
+.report-content {
+  display: inline-block;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+/* Entry CSS */
+
+.entry {
+  border-bottom: solid  1px #EEE;
+  padding-bottom: 25px;
+}
+
+.date {
+  display: inline-block;
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-size: 20px;
+  color: #515151;
+  margin-left: 25px;
+}
+
+.rotate {
+  margin-top: 125px;
+  transform-origin: 0 0;
+  -webkit-transform: rotate(270deg);
+}
+
+.date-container {
+  display: inline-block;
+}
+
+/* Goal CSS */
+.goal-container {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.check-icon {
+  width: 100px;
+}
+
+.goal-desc {
+  font-family: "Avenir";
+  color: #626262;
+  font-size: 15px;
+  text-align: center;
+  width: 100px;
+}

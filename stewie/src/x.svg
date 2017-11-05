@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>X</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="62" cy="62" r="62"></circle>
+        <filter x="-12.5%" y="-10.9%" width="126.6%" height="126.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="1" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.82354538   0 0 0 0 0.795306964   0 0 0 0 0.964737457  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard" transform="translate(-487.000000, -337.000000)">
+            <g id="Section-#1" transform="translate(0.000000, 262.000000)">
+                <g id="Boxes" transform="translate(148.000000, 80.000000)">
+                    <g id="Box-#2" transform="translate(285.000000, 2.000000)">
+                        <g id="X" transform="translate(63.000000, 0.000000)">
+                            <g>
+                                <g id="Oval">
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                </g>
+                                <g transform="translate(35.500000, 36.500000)" id="Path-4" fill="#FCA0AA">
+                                    <path d="M0.5,39 C27.1666667,13 40.5,0 40.5,0 C40.5,0 44.3333333,4.16666667 52,12.5 L13,51 L0.5,39 Z"></path>
+                                    <path d="M1,39 C27.6666667,13 41,0 41,0 C41,0 44.8333333,4.16666667 52.5,12.5 L13.5,51 L1,39 Z" transform="translate(26.750000, 25.500000) scale(-1, 1) translate(-26.750000, -25.500000) "></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
