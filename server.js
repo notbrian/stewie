@@ -3,8 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const bodyParser = require('body-parser');
-const accountSid = 'ACd46513f712bc45dfc84cd49f51edef45';
-const authToken = '9de0366e2ae88807ad3e74a1a8c6ad64';
+const accountSid = process.env.twilioID;
+const authToken = process.env.twilioAuthToken;
 const client = require('twilio')(accountSid, authToken);
 
 
@@ -13,7 +13,7 @@ var firebase = require('firebase/app');
 require('firebase/database');
 
 var config = {
-  apiKey: "AIzaSyCyTpihMAroNqReFOErgq210gJdU2fYU9Y",
+  apiKey: process.env.firebaseKey,
   authDomain: "stewie-data.firebaseapp.com",
   databaseURL: "https://stewie-data.firebaseio.com",
   projectId: "stewie-data",
