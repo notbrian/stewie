@@ -9,8 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase": "^4.6.1",
     "http": "0.0.0",
     "twilio": "^3.9.2"
+  },
+  "engines": {
+    "node": "9.0.0"
   }
 }
