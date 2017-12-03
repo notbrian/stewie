@@ -1,6 +1,6 @@
 # Stewie 👱
 
-![ScreenShot](https://i.imgur.com/Jbvr1nR.png)
+![ScreenShot](https://i.imgur.com/CHPxVlj.png)
 
 A personal assistant to help plan and reflect on your goals for the day.
 
