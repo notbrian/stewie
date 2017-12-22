@@ -39,7 +39,7 @@ app.options("/*", function(req, res, next){
   res.send(200);
 });
 
-app.post('/', async function(req, res) {
+app.post('/backend', async function(req, res) {
   let smsCount = req.session.counter || 0;
   req.session.isCompleting = req.session.isCompleting || false
   let userMessage = req.body.Body
