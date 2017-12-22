@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Entry from '../Entry.js';
 import './report.css';
-import character from '../../character.png';
+import character from '../../character-reading.svg';
 import base from '../../base.js';
 
 class Report extends Component {
@@ -14,7 +14,7 @@ class Report extends Component {
   }
 
   componentWillMount(){
-    base.syncState(`4169049147`, {
+    base.syncState(`6478607931`, {
       context: this,
       state: 'goals'
     });
