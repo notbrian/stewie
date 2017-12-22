@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Entry from '../Entry.js';
 import './report.css';
-import character from '/Users/JevinSidhu/Desktop/goals-reminder-app/stewie/src/character.png';
-import base from '/Users/JevinSidhu/Desktop/goals-reminder-app/stewie/src/base.js';
+import character from '../../character.png';
+import base from '../../base.js';
 
 class Report extends Component {
   constructor() {

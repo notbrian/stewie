@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Report/report.css';
 import Goal from './Goal.js';
-import base from '/Users/brian/Documents/Coding/goals-reminder-app/stewie/src/base.js';
+import base from '../base.js';
 
 class Entry extends Component {
   constructor() {
