@@ -39,6 +39,11 @@ app.options("/*", function(req, res, next){
   res.send(200);
 });
 
+app.use(express.static(path.join(__dirname, 'frontend/public')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/frontend/public/index.html'));
+});
+
 app.post('/backend', async function(req, res) {
   let smsCount = req.session.counter || 0;
   req.session.isCompleting = req.session.isCompleting || false
