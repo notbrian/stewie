@@ -17,7 +17,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build && echo postbuild complete"
+    "eject": "react-scripts eject"
   }
 }
