@@ -11,6 +11,8 @@ class Report extends Component {
     this.state = {
       goals: {}
     };
+
+
   }
 
   componentWillMount(){
@@ -36,7 +38,7 @@ class Report extends Component {
        {
           Object
             .keys(this.state.goals)
-            .map(key => <Entry key={key} date={key}/>)
+            .map(key => <Entry key={key} date={key} goals={this.state.goals}/>)
         }
       </div>
     );

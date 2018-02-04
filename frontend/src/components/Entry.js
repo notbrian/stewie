@@ -6,17 +6,13 @@ import base from '../base.js';
 class Entry extends Component {
   constructor() {
     super();
-
-    this.state = {
-      goals: {}
-    };
   }
 
   componentWillMount(){
-    base.syncState(`6478607931`, {
-      context: this,
-      state: 'goals'
-    });
+    // base.syncState(`4169049147`, {
+    //   context: this,
+    //   state: 'goals'
+    // });
   }
 
   render() {
@@ -28,11 +24,11 @@ class Entry extends Component {
 
         {
           Object
-            .keys(this.state.goals[`${this.props.date}`]["goals"])
+            .keys(this.props.goals[`${this.props.date}`]["goals"])
             .map(key => <Goal
               key={key}
-              description={this.state.goals[`${this.props.date}`]["goals"][key]["goal"]}
-              completionState={this.state.goals[`${this.props.date}`]["goals"][key]["isCompleted"]}
+              description={this.props.goals[`${this.props.date}`]["goals"][key]["goal"]}
+              completionState={this.props.goals[`${this.props.date}`]["goals"][key]["isCompleted"]}
             />)
         }
         {/* <Goal description={this.state.goals[`${this.props.date}`]["goals"][0]["goal"]}/> */}
