@@ -8,13 +8,6 @@ class Entry extends Component {
     super();
   }
 
-  componentWillMount(){
-    // base.syncState(`4169049147`, {
-    //   context: this,
-    //   state: 'goals'
-    // });
-  }
-
   render() {
     return (
       <div className="entry">
