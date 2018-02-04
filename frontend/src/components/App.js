@@ -6,7 +6,7 @@ import '../css/landing.css';
 class App extends Component {
   render() {
     return (
-    <Report />
+    <Report phonenumber={this.props.location.state.phonenumber}/>
 
     );
   }

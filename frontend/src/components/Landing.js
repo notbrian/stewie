@@ -11,6 +11,10 @@ class Landing extends Component {
 
     this.sendSMS = this.sendSMS.bind(this);
     this.handleChangeName = this.handleChangeName.bind(this);
+
+    this.state = {
+      phoneNumber: undefined
+    }
   }
 
   sendSMS() {
@@ -40,7 +44,9 @@ class Landing extends Component {
           <p> Discuss your goals with a personal assistant. </p>
           <div className="submission">
             <input onChange={this.handleChangeName} type="number" className="phone-number" placeholder="enter your number"/>
-            <Link to="/report">
+            <Link to={{
+    pathname: '/report',
+    state: { phonenumber: this.state.phoneNumber }   }}>
               <button type="submit" className="submit" onClick={this.sendSMS}><b>GO</b></button>
             </Link>
           </div>
