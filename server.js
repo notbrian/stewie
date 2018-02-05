@@ -109,29 +109,13 @@ app.post('/backend', async function(req, res) {
     let currentDate = Date().slice(4, 10)
     let snapshot = await firebase.database().ref(fromNumber).once('value')
     let data = snapshot.val()
-    if (userMessage.toLowerCase().includes("1")) {
-      data[currentDate].goals[0].isCompleted = true
-    }
-    if (userMessage.toLowerCase().includes("2")) {
-      data[currentDate].goals[1].isCompleted = true
 
+    for (var element of [1, 2, 3, 4, 5, 6, 7]) {
+      if (userMessage.includes(JSON.stringify(element))) {
+        element -= 1
+        data[currentDate].goals[element].isCompleted = true
+      }
     }
-    if (userMessage.toLowerCase().includes("3")) {
-      data[currentDate].goals[2].isCompleted = true
-    }
-    if (userMessage.toLowerCase().includes("4")) {
-      data[currentDate].goals[3].isCompleted = true
-    }
-    if (userMessage.toLowerCase().includes("5")) {
-    data[currentDate].goals[4].isCompleted = true
-    }
-    if (userMessage.toLowerCase().includes("6")) {
-      data[currentDate].goals[5].isCompleted = true
-    }
-    if (userMessage.toLowerCase().includes("7")) {
-      data[currentDate].goals[6].isCompleted = true
-    }
-
 
     firebase.database().ref(fromNumber).set(
       data
