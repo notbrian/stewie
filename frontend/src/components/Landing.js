@@ -42,14 +42,14 @@ class Landing extends Component {
         <div className="content">
           <h1> Stewie </h1>
           <p> Discuss your goals with a personal assistant. </p>
-          <div className="submission">
+          <form className="submission">
             <input onChange={this.handleChangeName} type="number" className="phone-number" placeholder="enter your number"/>
             <Link to={{
     pathname: '/report',
     state: { phonenumber: this.state.phoneNumber }   }}>
               <button type="submit" className="submit" onClick={this.sendSMS}><b>GO</b></button>
             </Link>
-          </div>
+          </form>
         </div>
       </div>
     );

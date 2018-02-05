@@ -57,10 +57,20 @@ app.post('/backend', async function(req, res) {
 
 
   if ((smsCount > 0) && userMessage.toLowerCase().includes("goal") ) {
-    goals = userMessage.split("to").splice(-1, 1)[0].split(",").map((element) => {
-      return element.replace(".", "").replace("and ", "").replace(" ", "")
-    })
+      goals = userMessage
+        .split("to")
+        .splice(-1, 1)[0]
 
+      if (goals.includes(",")) {
+        goals = goals.split(",")
+      } else if (goals.includes(",and")) {
+        goals = goals.split(",and")
+      } else {
+        goals = goals.split(" and")
+      }
+        goals.map((element) => {
+          return element.replace(".", "").replace(" ", "")
+        })
 
     let returnGoals = goals.slice(0).map((x) => {
       return " " + x
