@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@shopify/polaris": "^1.10.2",
     "axios": "^0.17.0",
     "bootstrap": "^3.3.7",
     "re-base": "^2.2.0",

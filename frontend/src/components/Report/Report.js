@@ -16,7 +16,7 @@ class Report extends Component {
   }
 
   componentWillMount(){
-    base.syncState(this.props.phonenumber, {
+    base.syncState(this.props.phonenumber + "/goals", {
       context: this,
       state: 'goals'
     });
