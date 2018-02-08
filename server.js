@@ -55,7 +55,6 @@ app.post('/backend', async function(req, res) {
     let goals = [];
   }
 
-
   if ((smsCount > 0) && userMessage.toLowerCase().includes("goal") ) {
       goals = userMessage
         .split("to")

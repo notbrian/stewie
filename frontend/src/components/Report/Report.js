@@ -23,6 +23,7 @@ class Report extends Component {
   }
 
   render() {
+
     return (
       <div className="report-body">
 
