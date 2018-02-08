@@ -136,7 +136,7 @@ app.post('/backend', async function(req, res) {
     message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them as "My goals are to goal1, goal2, ..."';
     twiml.message(message)
   } else if (userMessage.toLowerCase().includes("approve")) {
-    message = 'Authenticating!"';
+    message = 'Authenticating!';
     twiml.message(message)
 
     firebase.database().ref(fromNumber).update({
