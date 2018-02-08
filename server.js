@@ -33,7 +33,7 @@ app.use(session({
 }));
 
 
-app.options("/*", function(req, res, next){
+app.options("/*", function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
@@ -42,7 +42,7 @@ app.options("/*", function(req, res, next){
 
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+  res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
 });
 
 app.post('/backend', async function(req, res) {
@@ -55,21 +55,21 @@ app.post('/backend', async function(req, res) {
     let goals = [];
   }
 
-  if ((smsCount > 0) && userMessage.toLowerCase().includes("goal") ) {
-      goals = userMessage
-        .split("to")
-        .splice(-1, 1)[0]
+  if ((smsCount > 0) && userMessage.toLowerCase().includes("goal")) {
+    goals = userMessage
+      .split("to")
+      .splice(-1, 1)[0]
 
-      if (goals.includes(",")) {
-        goals = goals.split(",")
-      } else if (goals.includes(",and")) {
-        goals = goals.split(",and")
-      } else {
-        goals = goals.split(" and")
-      }
-        goals.map((element) => {
-          return element.replace(".", "").replace(" ", "")
-        })
+    if (goals.includes(",")) {
+      goals = goals.split(",")
+    } else if (goals.includes(",and")) {
+      goals = goals.split(",and")
+    } else {
+      goals = goals.split(" and")
+    }
+    goals.map((element) => {
+      return element.replace(".", "").replace(" ", "")
+    })
 
     let returnGoals = goals.slice(0).map((x) => {
       return " " + x
@@ -91,19 +91,19 @@ app.post('/backend', async function(req, res) {
       })
     }
     var formattedDate = Date().slice(4, 10)
-
-    firebase.database().ref(fromNumber + "/" + formattedDate).update({
+    firebase.database().ref(fromNumber + "/goals/" + formattedDate).update({
         goals: goalsData
 
     });
 
-  } else if ((smsCount > 1) && userMessage.toLowerCase().includes("no")) {
+}
+   else if ((smsCount > 1) && userMessage.toLowerCase().includes("no")) {
     message = 'Oh no! Try entering them again please.'
     twiml.message(message)
   } else if (userMessage.toLowerCase().includes("finished")) {
     message = 'Great! Which goals did you finish? Enter the numbers!\n'
     let currentDate = Date().slice(4, 10)
-    let snapshot = await firebase.database().ref(fromNumber).once('value')
+    let snapshot = await firebase.database().ref(fromNumber + "/goals").once('value')
     let data = snapshot.val()
     for (let x = 0; x < data[currentDate].goals.length; x++) {
       message = message + `\n ${x + 1}. ${data[currentDate].goals[x].goal}`
@@ -116,7 +116,7 @@ app.post('/backend', async function(req, res) {
   } else if (req.session.isCompleting) {
     req.session.isCompleting = false
     let currentDate = Date().slice(4, 10)
-    let snapshot = await firebase.database().ref(fromNumber).once('value')
+    let snapshot = await firebase.database().ref(fromNumber + "/goals").once('value')
     let data = snapshot.val()
 
     for (var element of [1, 2, 3, 4, 5, 6, 7]) {
@@ -126,7 +126,7 @@ app.post('/backend', async function(req, res) {
       }
     }
 
-    firebase.database().ref(fromNumber).set(
+    firebase.database().ref(fromNumber + "/goals").set(
       data
     );
     message = "I've cleared them on your checklist! Keep it up!"
@@ -135,6 +135,13 @@ app.post('/backend', async function(req, res) {
   } else if (userMessage.toLowerCase().includes("hello")) {
     message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them as "My goals are to goal1, goal2, ..."';
     twiml.message(message)
+  } else if (userMessage.toLowerCase().includes("approve")) {
+    message = 'Authenticating!"';
+    twiml.message(message)
+
+    firebase.database().ref(fromNumber).update({
+      isAuth: true
+    });
   }
   req.session.counter = smsCount + 1;
   res.writeHead(200, {
@@ -146,7 +153,7 @@ app.post('/backend', async function(req, res) {
 app.post('/sendStart', function(req, res) {
   console.log("Recieved number!")
   console.log(req.body.phoneNumber)
-  let message = 'Hey! I\'m Stewie! What are your goals for today? \n\n Please format them as "My goals are to goal1, goal2, ..."';
+  let message = 'Hey! I\'m Stewie! 👋 To approve this login request please say "approve"';
   client.messages
     .create({
       to: req.body.phoneNumber,
@@ -158,6 +165,12 @@ app.post('/sendStart', function(req, res) {
     'Content-Type': 'text/xml'
   });
   res.end();
+
+
+  firebase.database().ref(req.body.phoneNumber).update({
+    isAuth: false
+  });
+
 })
 
 http.createServer(app).listen(process.env.PORT || 1337, () => {
