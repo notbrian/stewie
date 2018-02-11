@@ -98,8 +98,8 @@ app.post('/backend', async function(req, res) {
         messageGoals[messageGoals.length - 1];
     }
     if (messageGoals.length == 2) {
-      messageGoals[0] =
-        messageGoals[0].replace(',','');
+      messageGoals[1] =
+        messageGoals[1].replace(',','');
     }
     message = `To confirm, your goals are to:${messageGoals}?`;
     // Sends message back to user using Twilio
