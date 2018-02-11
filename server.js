@@ -76,7 +76,7 @@ app.post('/backend', async function(req, res) {
     // goal variable for the database
     // e.g "My goals are to chew bubble gum and kick ass"
     // --> ['eat a banana, kick ass']
-    goals = userMessage
+     goals = userMessage
       .split('to')
       .splice(-1, 1)[0];
     if (goals.includes(',')) {
@@ -89,9 +89,9 @@ app.post('/backend', async function(req, res) {
 		goals = goals.split('and');
     }
 
-    goals.map((element) => {
+    if (typeof goals == "array") {goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
-    });
+    });}
     // Formats response message back to user
     // e.g So your goals are to eat a banana, kick ass?
     // --> So your goals are to eat a banana, and kick ass?
