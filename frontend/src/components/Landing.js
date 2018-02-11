@@ -20,7 +20,7 @@ class Landing extends Component {
 
   sendSMS(e) {
     e.preventDefault();
-    axios.post(`https://31cc7b02.ngrok.io/sendStart`,
+    axios.post(`https://stewiebot.herokuapp.com/sendStart`,
        {phoneNumber: this.state.phoneNumber}).then(function(response) {
     }).catch(function(error) {
       console.log(error);
