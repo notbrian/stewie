@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Report/report.css';
-import checkmark from '../checkmark.svg';
-import x from '../x.svg';
+import '../css/landing.css';
+import checkmark from '../img/checkmark.svg';
+import x from '../img/x.svg';
 
 class Goal extends Component {
 

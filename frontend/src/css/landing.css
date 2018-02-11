@@ -14,12 +14,10 @@ body {
 }
 
 .image {
-  display: inline-block;
   margin-right: 50px;
 }
 
 .content {
-  display: inline-block;
   margin-top: 10px;
 }
 
@@ -55,7 +53,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .submit {
   font-family: 'Avenir' !important;
-  width: 15%;
   background-color: #FFC3A5;
   border-left: solid 1px #FFF;
   border-right: none;
@@ -103,4 +100,34 @@ input[type=number]::-webkit-outer-spin-button {
   display: flex;
   align-items: center;
   margin-right: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .vertical-center {
+    display: block;
+    text-align: center;
+    margin-top: 125px;
+  }
+
+  .icon {
+    width: 175px;
+  }
+
+  .image {
+    margin: 0;
+  }
+
+  .content {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content h1 {
+    font-size: 35px;
+  }
+
+  .content p {
+    font-size: 16px;
+  }
 }
