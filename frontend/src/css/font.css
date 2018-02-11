@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700');
+
+@fontface {
+  font-family: 'Avenir';
+  src: url('./fonts/Avenir.ttc')
+}

@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import base from '../base.js';
 import {ProgressBar} from '@shopify/polaris';
 
+
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 class Landing extends Component {
@@ -50,7 +51,7 @@ class Landing extends Component {
     return(
       <div className="info vertical-center">
         <div className="image">
-          <img className="icon" src={ require('../character.png') } alt="Stewie-Large" />
+          <img className="icon" src={ require('../img/character.png') } alt="Stewie-Large" />
         </div>
         <div className="content">
           <h1> Stewie </h1>
@@ -67,7 +68,7 @@ class Landing extends Component {
     return (
       <div className="info vertical-center">
         <div className="image">
-          <img className="icon" src={ require('../character.png') } alt="Stewie-Large" />
+          <img className="icon" src={ require('../img/character.png') } alt="Stewie-Large" />
         </div>
         <div className="content">
           <h1> Stewie </h1>

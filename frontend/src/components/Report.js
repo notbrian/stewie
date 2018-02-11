@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Entry from '../Entry.js';
-import './report.css';
-import character from '../../character-reading.svg';
-import base from '../../base.js';
+import Entry from './Entry.js';
+import '../css/report.css';
+import character from '../img/character-reading.svg';
+import base from '../base.js';
 
 class Report extends Component {
   constructor() {
@@ -11,12 +11,10 @@ class Report extends Component {
     this.state = {
       goals: {}
     };
-
-
   }
 
   componentWillMount(){
-    base.syncState(this.props.phonenumber + "/goals", {
+    base.syncState(this.props.location.state.phonenumber + "/goals", {
       context: this,
       state: 'goals'
     });
@@ -39,7 +37,7 @@ class Report extends Component {
        {
           Object
             .keys(this.state.goals)
-            .map(key => <Entry key={key} date={key} goals={this.state.goals}/>)
+            .map(key => <Entry key={key} date={key} goals={this.state.goals}/>).reverse()
         }
       </div>
     );

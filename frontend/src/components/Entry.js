@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Report/report.css';
+import '../css/report.css';
 import Goal from './Goal.js';
 import base from '../base.js';
 
@@ -14,17 +14,17 @@ class Entry extends Component {
         <div className="date-container">
           <h3 className="date rotate"> {this.props.date.toUpperCase()} </h3>
         </div>
-
-        {
-          Object
-            .keys(this.props.goals[`${this.props.date}`]["goals"])
-            .map(key => <Goal
-              key={key}
-              description={this.props.goals[`${this.props.date}`]["goals"][key]["goal"]}
-              completionState={this.props.goals[`${this.props.date}`]["goals"][key]["isCompleted"]}
-            />)
-        }
-        {/* <Goal description={this.state.goals[`${this.props.date}`]["goals"][0]["goal"]}/> */}
+        <div class="goals">
+          {
+            Object
+              .keys(this.props.goals[`${this.props.date}`])
+              .map(key => <Goal
+                key={key}
+                description={this.props.goals[`${this.props.date}`][key]["goal"]}
+                completionState={this.props.goals[`${this.props.date}`][key]["isCompleted"]}
+              />)
+          }
+      </div>
       </div>
     );
   }
