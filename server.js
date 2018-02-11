@@ -93,8 +93,10 @@ app.post('/backend', async function(req, res) {
     // e.g So your goals are to eat a banana, kick ass?
     // --> So your goals are to eat a banana, and kick ass?
     let messageGoals = goals.slice(0);
-    messageGoals[messageGoals.length - 1] = ' and' +
-      messageGoals[messageGoals.length - 1];
+    if (messageGoals.length > 1) {
+      messageGoals[messageGoals.length - 1] = ' and' +
+        messageGoals[messageGoals.length - 1];
+    }
     message = `So your goals are to${messageGoals}?`;
     // Sends message back to user using Twilio
     twiml.message(message);
