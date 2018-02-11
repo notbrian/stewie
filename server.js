@@ -81,11 +81,14 @@ app.post('/backend', async function(req, res) {
       .splice(-1, 1)[0];
     if (goals.includes(',')) {
       goals = goals.split(',');
-    } else if (goals.includes(',and')) {
-      goals = goals.split(',and');
-    } else {
-      goals = goals.split(' and');
+    } 
+	if (goals[goals.length -1].includes('and')) {
+	  goals[goals.length -1] = goals[goals.length -1].replace('and', '');
     }
+	if (goals.includes('and')) {
+		goals = goals.split('and');
+    }
+
     goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
     });
