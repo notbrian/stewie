@@ -88,10 +88,9 @@ app.post('/backend', async function(req, res) {
 	if (goals.includes('and')) {
 		goals = goals.split('and');
     }
-    if (typeof goals !== "array") {
+    if (typeof goals !== "object") {
 	goals = [goals];
     }
- 
     goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
     });
