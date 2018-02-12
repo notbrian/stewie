@@ -82,14 +82,14 @@ app.post('/backend', async function(req, res) {
     if (goals.includes(',')) {
       goals = goals.split(',');
     }
-	if (goals[goals.length -1].includes('and')) {
-	  goals[goals.length -1] = goals[goals.length -1].replace('and', '');
+  	if (goals[goals.length -1].includes('and')) {
+  	  goals[goals.length -1] = goals[goals.length -1].replace('and', '');
     }
-	if (goals.includes('and')) {
-		goals = goals.split('and');
+  	if (goals.includes('and')) {
+  		goals = goals.split('and');
     }
     if (typeof goals !== "object") {
-	goals = [goals];
+	     goals = [goals];
     }
     goals = goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
@@ -97,8 +97,8 @@ app.post('/backend', async function(req, res) {
     // Formats response message back to user
     // e.g So your goals are to eat a banana, kick ass?
     // --> So your goals are to eat a banana, and kick ass?
-    let messageGoals = goals.slice(0);
-    message = `To confirm, your goals are to:${messageGoals}?`;
+    // let messageGoals = goals.slice(0);
+    message = 'Are you sure?';
     // Sends message back to user using Twilio
     twiml.message(message);
     console.log(goals);
@@ -156,7 +156,7 @@ app.post('/backend', async function(req, res) {
     // 1. Chew bubble gum
     // 2. Kick ass
     for (let x = 0; x < data[currentDate].length; x++) {
-      message = message + `\n ${x + 1}. ${data[currentDate][x].goal}`;
+      message = message + `\n${x + 1}. ${data[currentDate][x].goal}`;
     }
 
     twiml.message(message);
