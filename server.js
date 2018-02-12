@@ -91,7 +91,7 @@ app.post('/backend', async function(req, res) {
     if (typeof goals !== "object") {
 	goals = [goals];
     }
-    goals.map((element) => {
+    goals = goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
     });
     // Formats response message back to user
