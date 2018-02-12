@@ -92,13 +92,13 @@ app.post('/backend', async function(req, res) {
 	     goals = [goals];
     }
     goals = goals.map((element) => {
-      return element.replace('.', '').replace(' ', '');
+      return element.replace('.', '').trim();
     });
     // Formats response message back to user
     // e.g So your goals are to eat a banana, kick ass?
     // --> So your goals are to eat a banana, and kick ass?
     // let messageGoals = goals.slice(0);
-    message = 'Are you sure?';
+    message = 'Are you sure you want to add these goals?';
     // Sends message back to user using Twilio
     twiml.message(message);
     console.log(goals);
