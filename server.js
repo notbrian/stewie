@@ -88,10 +88,13 @@ app.post('/backend', async function(req, res) {
 	if (goals.includes('and')) {
 		goals = goals.split('and');
     }
-
-    if (typeof goals == "array") {goals.map((element) => {
+    if (typeof goals !== "array") {
+	goals = [goals];
+    }
+ 
+    goals.map((element) => {
       return element.replace('.', '').replace(' ', '');
-    });}
+    });
     // Formats response message back to user
     // e.g So your goals are to eat a banana, kick ass?
     // --> So your goals are to eat a banana, and kick ass?
